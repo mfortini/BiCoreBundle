@@ -41,3 +41,7 @@ services:
         class: FOS\UserBundle\Security\LoginManager
         arguments: ['@security.token_storage','@security.user_checker','@security.authentication.session_strategy','@request_stack',~]
         public: true
+        
+    Cdf\BiCoreBundle\Tests\EventSubscriber\ForeignKeyEnabler:
+        tags:
+            - { name: doctrine.event_subscriber }
